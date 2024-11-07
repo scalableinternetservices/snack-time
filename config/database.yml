@@ -83,6 +83,8 @@ test:
 #
 production:
   <<: *default
-  database: cs291_main_project_production
-  username: cs291_main_project
-  password: <%= ENV["CS291_MAIN_PROJECT_DATABASE_PASSWORD"] %>
+  database: <%= ENV['RDS_DB_NAME'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  port: <%= ENV['RDS_PORT'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
